@@ -98,34 +98,28 @@ function speedType(ndx) {
 
 function legendaryByGen(ndx) {
 
-    var parseDate = d3.time.format("%d/%m/%Y").parse;
-    pokemonData.forEach(function(d) {
-        d.Generation = parseDate(d.Generation);
-    });
+var type_dim = ndx.dimension(dc.pluck('type'));
 
-    var gen_dim = ndx.dimension(function(d){
-        return d.Generation;
-    });
+var legendByTypeFalse = type_dim.group().reduceSum(dc.pluck('legendaries'));
 
-    var min_gen = gen_dim.bottom(1)[0].Generation;
-    var max_gen = gen_dim.top(1)[0].Generation;
+var legendByTypeTrue = type_dim.group().reduceSum(function (d) {
+    if (d.legendaries === "True") {
+        return +d.spend;
+    } else {
+        return 0;
+    }
+});
 
-    var legendary_dim = ndx.dimension(function(d) {
-        return [d.Generation, d.Legendary]
-    });
+var stackedChart = dc.barChart("#legendary-gen");
+stackedChart
+    .width(1000)
+    .height(500)
+    .dimension(type_dim)
+    .group(legendByTypeFalse, "Store A")
+    .stack(legendByTypeTrue, "Store B")
+    .x(d3.scale.ordinal())
+    .xUnits(dc.units.ordinal)
+    .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5));
+stackedChart.margins().right = 100;
 
-    var legendary_group = legendary_dim.group();
-    var legendary_chart = dc.scatterPlot("#legendary-gen");
-
-    legendary_chart
-        .width(1000)
-        .height(150)
-        .x(d3.time.scale().domain([min_gen, max_gen]))
-        .brushOn(false)
-        .symbolSize(8)
-        .clipPadding(10)
-        .yAxisLabel("Legendary")
-        .dimension(legendary_dim)
-        .group(legendary_group);
-}
-
+}   
