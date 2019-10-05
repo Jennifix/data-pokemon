@@ -98,28 +98,47 @@ function speedType(ndx) {
 
 function legendaryByGen(ndx) {
 
-var type_dim = ndx.dimension(dc.pluck('type'));
-
-var legendByTypeFalse = type_dim.group().reduceSum(dc.pluck('legendaries'));
-
-var legendByTypeTrue = type_dim.group().reduceSum(function (d) {
-    if (d.legendaries === "True") {
-        return +d.spend;
-    } else {
-        return 0;
+    function isLegendary(dimension, legendaries) {
+        return dimension.group().reduce(
+            function (p, v) {
+                p.total++;
+                if (v.legendaries == legendaries){
+                    p.match++;
+                }
+                return p;
+            },
+            function (p, v) {
+                p.total--;
+                if (v.legendaries == legendaries){
+                    p.match--;
+                }
+                return p;
+            },
+            function () {
+                return {total: 0, match: 0}
+            }
+        );
     }
-});
 
-var stackedChart = dc.barChart("#legendary-gen");
-stackedChart
-    .width(1000)
-    .height(500)
-    .dimension(type_dim)
-    .group(legendByTypeFalse, "Store A")
-    .stack(legendByTypeTrue, "Store B")
-    .x(d3.scale.ordinal())
-    .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5));
-stackedChart.margins().right = 100;
-
-}   
+    var dim = ndx.dimension(dc.pluck("type"));
+    var legendaryFalse = isLegendary(dim, "False");
+    var legendaryTrue = isLegendary(dim, "True");
+    
+    dc.barChart("#legendary-gen")
+        .width(1000)
+        .height(300)
+        .dimension(dim)
+        .group(legendaryFalse)
+        .stack(legendaryTrue)
+        .valueAccessor(function (d) {
+            if(d.value.total > 0) {
+                return (d.value.match / d.value.total) * 100;
+            } else {
+                return 0;
+            }
+        })
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
+        .margins({top:10, right: 100, bottom:30, left:50});
+}
