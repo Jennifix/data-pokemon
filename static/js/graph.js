@@ -120,7 +120,7 @@ function legendaryByGen(ndx) {
         );
     }
 
-    var dim = ndx.dimension(dc.pluck("type"));
+    var dim = ndx.dimension(dc.pluck("Generation"));
     var legendaryFalse = isLegendary(dim, "False");
     var legendaryTrue = isLegendary(dim, "True");
     
