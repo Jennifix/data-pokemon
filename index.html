@@ -18,32 +18,41 @@
 
 </head>
 <body>
+
     <section class="landing">
-        <div class="img container">
+        <div class="img container-fluid">
+            <div class="row navbar">   
+                <nav class="navbar fixed-top navbar-expand-lg navbarColor">
+                    <a class="navbar-brand navColor" href="#">Pokemon Stats</a>
+            </nav>
+        </div>
             <div class="row">
-                <div class="col-12">
-                    <h1>Find out the best pokemon</h1>
-                    <p>Do you want to know which kind of pokemon to choose</p>
-                    <button>Take me to the graphs!</button>
+                <div class="col-4">
+                    <div class= "jumbotron jumbotron-styles">
+                        <h1 class= "jumboText">Find out the best pokemon</h1>
+                        <p class= "jumboText">Do you want to know which kind of pokemon to choose</p>
+                        <a class="btn btn-warning jumboButton" href="#graphStart" role="button">Take me to the graphs!</a>
+                    </div>
                 </div>
             </div>
         </div>
         
     </section>
-    <section class="graphs">
+    <section id= "graphStart" class="graphs">
         <div class="container">
             <div class="row">
                 <div class="col-6">
                     <div id="type-per-gen"></div>
-                </div>
-                <div class="col-6">
                     <p>Type per gen</p>
                 </div>
-                            </div>
-            <div class="row">
-                <div id="type-per-num"></div>
-                <p>Type per num</p>
-            </div>
+                <div class="col-6">
+                    <div id="type-per-num"></div>
+                    <p>Type per num</p>
+                </div>
+            </div>    
+    
+                            
+
             <div class="row">
                 <div id="attack-type"></div>
                 <p>Attack per type</p>

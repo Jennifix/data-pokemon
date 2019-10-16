@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarColor {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbarColor .navColor {
+  color: #ff8800;
+}
+
+.img {
+  background-image: url(../img/pika.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all ease-in-out;
+  -moz-transition: all ease-in-out;
+  -webkit-transition: all ease-in-out;
+  -o-transition: all ease-in-out;
+}
+
+.jumbotron-styles {
+  width: 1000px;
+  margin-top: 70px;
+  margin-left: 160px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.jumbotron-styles .jumboText {
+  text-align: center;
+}
+
+.jumbotron-styles .jumboButton {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-left: 340px;
+}
+/*# sourceMappingURL=style.css.map */
