@@ -11,6 +11,12 @@ $transparentBlack: rgba(0, 0, 0, 0.8);
     -o-transition: all ease-in-out;
 }
 
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 body {
     background-color: white;
     margin: 0;
@@ -37,6 +43,8 @@ body {
     width: 1000px;
     margin-top: 70px;
     background-color: $transparentBlack;
+    position: relative; 
+    left: 15%;
 
     .jumboText {
         text-align: center;
@@ -47,11 +55,51 @@ body {
         margin-bottom: 25px;
         margin-left: 340px;
 
+
     }
 }
 
-// Circle Graphs
+.margin-down {
 
-.circle-facts {
-    margin-top: 70px;
+    margin-bottom: 45px;
+
+    .circle-div {
+
+    width: 70%;
+
+    .circle-facts {
+    margin-top: 80px;
+}
+}
+
+.top-margin {
+    margin-top: 20px;
+}
+
+.facts {
+    width: 70%;
+}
+
+}
+
+
+
+footer {
+    background-color: black;
+    height: 20vh;
+
+    .source {
+        margin-top: 7vh;
+        text-align: center;
+        color: #ff8800;
+        
+
+        a {
+            color: #ff8800;
+        }
+
+        a:hover {
+            color: #ad5c00;
+        }
+    }
 }

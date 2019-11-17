@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
   margin: 0;
@@ -28,6 +32,8 @@ body {
   width: 1000px;
   margin-top: 70px;
   background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  left: 15%;
 }
 
 .jumbotron-styles .jumboText {
@@ -40,7 +46,42 @@ body {
   margin-left: 340px;
 }
 
-.circle-facts {
-  margin-top: 70px;
+.margin-down {
+  margin-bottom: 45px;
+}
+
+.margin-down .circle-div {
+  width: 70%;
+}
+
+.margin-down .circle-div .circle-facts {
+  margin-top: 80px;
+}
+
+.margin-down .top-margin {
+  margin-top: 20px;
+}
+
+.margin-down .facts {
+  width: 70%;
+}
+
+footer {
+  background-color: black;
+  height: 20vh;
+}
+
+footer .source {
+  margin-top: 7vh;
+  text-align: center;
+  color: #ff8800;
+}
+
+footer .source a {
+  color: #ff8800;
+}
+
+footer .source a:hover {
+  color: #ad5c00;
 }
 /*# sourceMappingURL=style.css.map */

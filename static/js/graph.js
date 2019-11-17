@@ -18,7 +18,7 @@ function makeGraphs(error, pokemonData) {
 
 function typeGen(ndx) {
 
-    var type_1_dim = ndx.dimension(dc.pluck('legendaries'));
+    var type_1_dim = ndx.dimension(dc.pluck('type'));
 
     var type_per_gen = type_1_dim.group().reduceSum(dc.pluck('Generation'));
 
@@ -32,9 +32,9 @@ function typeGen(ndx) {
 
 function typeNum(ndx) {
 
-    var type_1_dim = ndx.dimension(dc.pluck('type'));
+    var type_1_dim = ndx.dimension(dc.pluck('type_2'));
 
-    var type_per_num = type_1_dim.group().reduceSum(dc.pluck('HP'));
+    var type_per_num = type_1_dim.group().reduceSum(dc.pluck('Generation'));
 
     dc.pieChart('#type-per-num')
         .height(330)
@@ -54,8 +54,8 @@ function attackType(ndx) {
         .width(1000)
         .height(150)
         .margins({
-            top: 10,
-            right: 50,
+            top: 0,
+            right: 0,
             bottom: 30,
             left: 50
         })
@@ -81,7 +81,7 @@ function speedType(ndx) {
     .height(150)
     .margins({
         top: 10,
-        right: 50,
+        right: 0,
         bottom: 30,
         left: 50
     })

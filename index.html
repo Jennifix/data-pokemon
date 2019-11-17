@@ -16,20 +16,22 @@
     <script type="text/javascript" src="static/js/queue.min.js"></script>
     <script type="text/javascript" src="static/js/graph.js"></script>
 
+    <script src="static/js/jquery-3.4.1.js"></script>
+
 </head>
 <body>
     <section class="landing">
         <div class="img container-fluid">
             <div class="row navbar">   
                 <nav class="navbar fixed-top navbar-expand-lg navbarColor">
-                    <a class="navbar-brand navColor" href="#">Pokemon Stats</a>
+                    <a class="navbar-brand navColor" href="#">Pokémon Stats</a>
             </nav>
         </div>
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-12">
                     <div class= "jumbotron jumbotron-styles">
-                        <h1 class= "jumboText">Find out the best pokemon</h1>
-                        <p class= "jumboText">Do you want to know which kind of pokemon to choose</p>
+                        <h1 class= "jumboText">Pokémon Statistics</h1>
+                        <p class= "jumboText">Do you want to know what type of pokemon to choose?</p>
                         <a class="btn btn-warning jumboButton" href="#graphStart" role="button">Take me to the graphs!</a>
                     </div>
                 </div>
@@ -38,15 +40,18 @@
         
     </section>
     <section id= "graphStart" class="graphs">
-        <div class="container">
+        <div class="container margin-down">
             <div class="row">
                 <div class="col-12">
-                    <div id="type-per-gen" class="col-sm-3">
+                    <div id="type-per-gen" class="col-md-3 col-sm-12">
                     </div>
-                    <div id="type-per-num" class="col-sm-3">
-                    </div>
-                    <div class="col-sm-6">
-                        <p class= "circle-facts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab non recusandae eligendi! Doloribus, laborum atque dolorum saepe ullam quod minima impedit itaque, soluta veniam dolores, magni esse culpa odio. Minima, quae omnis eaque doloremque dignissimos est? Ullam suscipit, rerum sed possimus placeat repellat nisi ab recusandae harum facere accusamus omnis!</p>
+                    <div id="type-per-num" class="col-md-3 col-sm-12"></div>
+                        <div class="col-lg-6 col-md-3 col-sm-12 ">
+                            <div class= "circle-div">
+                                <p class= "circle-facts">The pie chart to the right shows us how many pokémon there are of every type per generation.</p>
+                                <p>In the second pie chart can we see that it's the most common for pokémon to not have a second typing</p>
+                                <p>We can conclude from these pie charts that the most Pokemon are water types and most of them don't have a second typing. As you click on the different types in the charts you'll be able to see the what second typings are most common for the types.</p>
+                            </div>
                     </div>
                 </div>
             </div>    
@@ -54,21 +59,37 @@
                             
 
             <div class="row">
-                <div id="attack-type"></div>
-                <p>Attack per type</p>
+                <div id="attack-type" class= "col-lg-12 mx-auto">
+                    <p>Attack per type</p>
+                </div>
+                <div class="col-lg-12">
+                    <p class= "facts">This chart shows us which type that statistically has the highest attack. As you can see it's the water type so consider choosing the water starter if you want some muscles.</p>
+                </div>
+                
             </div>
             <div class="row">
-                <div id="speed-type"></div>
-                <p>Speed per type</p>
+                <div id="speed-type" class= "col-lg-12 mx-auto top-margin"><p>Speed per type</p></div>
+                <div class="col-lg-12">
+                        <p class= "facts">This chart shows us which type that statistically has the highest speed. The normal and water tend to have the highest speed.</p>
+                    </div>
             </div>
             <div class="row">
-                <div id="legendary-gen"></div>
-                <p>Legendary per generation</p>
+                <div id="legendary-gen" class= "col-lg-12 mx-auto top-margin"><p>Legendary per generation</p></div>
+                <div class="col-lg-12">
+                        <p class= "facts">You can in this graph see how many legendary pokémon you can in every generation.</p>
+                    </div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <p class= "source">Source: <a href="https://www.kaggle.com/abcsds/pokemon" target="_blank">Kaggle</a> </p>
+            </div>
+        </div>
     
-    
+    </footer>
     
 </body>
 </html>
