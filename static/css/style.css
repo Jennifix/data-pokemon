@@ -27,7 +27,6 @@ body {
 .jumbotron-styles {
   width: 1000px;
   margin-top: 70px;
-  margin-left: 160px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -39,5 +38,9 @@ body {
   margin-top: 20px;
   margin-bottom: 25px;
   margin-left: 340px;
+}
+
+.circle-facts {
+  margin-top: 70px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -18,7 +18,7 @@ function makeGraphs(error, pokemonData) {
 
 function typeGen(ndx) {
 
-    var type_1_dim = ndx.dimension(dc.pluck('type'));
+    var type_1_dim = ndx.dimension(dc.pluck('legendaries'));
 
     var type_per_gen = type_1_dim.group().reduceSum(dc.pluck('Generation'));
 
@@ -34,7 +34,7 @@ function typeNum(ndx) {
 
     var type_1_dim = ndx.dimension(dc.pluck('type'));
 
-    var type_per_num = type_1_dim.group().reduceSum(dc.pluck('#'));
+    var type_per_num = type_1_dim.group().reduceSum(dc.pluck('HP'));
 
     dc.pieChart('#type-per-num')
         .height(330)
@@ -139,6 +139,6 @@ function legendaryByGen(ndx) {
         })
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
-        .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
+        .legend(dc.legend().x(920).y(20).itemHeight(15).gap(5))
         .margins({top:10, right: 100, bottom:30, left:50});
 }

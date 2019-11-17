@@ -32,10 +32,10 @@ body {
     @include landingImage();
 }
 
+
 .jumbotron-styles {
     width: 1000px;
     margin-top: 70px;
-    margin-left: 160px;
     background-color: $transparentBlack;
 
     .jumboText {
@@ -51,3 +51,7 @@ body {
 }
 
 // Circle Graphs
+
+.circle-facts {
+    margin-top: 70px;
+}
