@@ -115,7 +115,7 @@ function legendaryByGen(ndx) {
                 return p;
             },
             function () {
-                return {total: 0, match: 0}
+                return {total: 0, match: 0};
             }
         );
     }

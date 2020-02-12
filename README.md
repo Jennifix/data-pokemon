@@ -4,18 +4,17 @@ In this project I've created a page that lets people compare the different types
 
 ## UX
 
-This site is created to give people who are interested in pokemon an easy way to compare the types of pokémon. The page has a very simple design with button on the landing that brings you right to the graphs. 
+This site is created to give people who are interested in pokemon an easy way to compare the types of pokémon. The page has a very simple design.
 
-- A user should be able to click on the graphs to easily compare 
+- The user visits this page to compare the types of pokemon
 
-- The color scheme is simple
-
-- 
+- The user wants a simple design and doesn't want unnecessary steps.
 
 ## Features
 
-- Clicking button on landing to get straight to the graphs
-- By using the graphs you can
+- The user can easily click the graphs to get different comparisons
+
+- The user can easy get to the graphs by clicking the button on the landing or just scrolling down the page.
 
 ## Technologies Used
 
@@ -23,11 +22,13 @@ This site is created to give people who are interested in pokemon an easy way to
 
 - Bootstrap was used to create the layout of the page.
 
-- Sass was used to 
+- Sass was used to create styles more efficiently.
 
 ## Testing
 
-I asked a couple of friends who are working as developers to try out the website and check out the code to find errors
+I asked a couple of friends try out the website and check out the code to find errors. They clicked around on all the buttons and everything worked. 
+
+I've also done my own testing and ran the code on https://jshint.com/
 
 ## Deployment
 
